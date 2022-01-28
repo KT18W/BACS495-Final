@@ -1,2 +1,7 @@
-
+.Pic {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
 
