@@ -2,18 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
-import treasure from './images/treasure.jpg';
+import Body from './Body';
 function App(){
   return (
     <div className="App">
       <Header />
-      <body>
-        <img className="Pic" src={treasure} alt="Treasure Chest" />
-      </body>
+      <Body />
       <Footer />
     </div>
   );
 }
-
-
 export default App;

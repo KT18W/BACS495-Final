@@ -4,7 +4,7 @@ import './Footer.css';
 function Footer() {
     return (
       <div className="Footer">
-            Footer
+            The Answers to University
       </div>
     )
   }
