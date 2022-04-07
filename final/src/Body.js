@@ -6,6 +6,7 @@ function Body() {
     return (
       <div className="Body">
             <img className="Pic" src={treasure} alt="Treasure Chest" />
+          
       </div>
     )
   }
