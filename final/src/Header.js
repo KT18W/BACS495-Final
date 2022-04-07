@@ -16,57 +16,32 @@ function Header() {
     }
   };
 
-  const styles = StyleSheet.create({
-    parentView: {
-      flex:1,
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'flex-start',
-    },
-    menuView: {
-      flex:1,
-    },
-    titleView: {
-      flex:4,
-    },
-    loginView: {
-      flex:2,
-    },
-  })
-
   return (
+
     <div className="Header">
-      <parentView style={styles.parentView}>
-        <menuView style={styles.menuView}>
-          <button className="linesButton">
-            <img className="Lines" src={lines} alt="Menu" />
-          </button>
-        </menuView>
-        <titleView style={styles.titleView}>
-          <h1 className="Title">
-            The Answers to University
-          </h1>
-        </titleView>
-        <loginView style={styles.loginView}>
+      <button className="linesButton">
+          <img className="Lines" src={lines} alt="Menu" />
+      </button>
+      <h1 className="Title">
+          The Answers to University
+      </h1>
           <div className="done">
-            {!value ? (<form onSubmit={submit}>
-              <label>
-                Username:
-                <input type="text" name="username" />
-              </label>
-              <label>
-                Password:
-                <input type="password" name="password" />
-              </label>
-              <input type="submit" value="login" />
-            </form>) :
-              <form onSubmit={submit}>
-                <input type="submit" value="logout" />
-              </form>}
+            {!value ? (<form onSubmit={submit}>        
+          <label>
+            Username:
+            <input type="text" name="username" />       
+          </label>
+          <label>
+            Password:
+            <input type="password" name="password" />       
+          </label>
+          <input type="submit" value="login"/>
+        </form>
+        ) : <form onSubmit={submit}>        
+        <input type="submit" value="logout"/>
+      </form>}
           </div>
-        </loginView>
-      </parentView>
-    </div>
+      </div>
   );
 }
 
