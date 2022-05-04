@@ -1,5 +1,5 @@
 import React from 'react';
-import './Blocks.css';
+import './css/Blocks.css';
 
 function Blocks() {
     return <div className='container'>

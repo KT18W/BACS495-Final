@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './css/Body.css';
 
 function Body() {
   const[name, setName] = useState("No one");
