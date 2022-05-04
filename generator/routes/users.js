@@ -29,7 +29,6 @@ router.post('/', function(req, res, next) {
   }
   var db = req.app.locals.db
   db.collection('users').insertOne(user);
-
   res.send("User inserted" + user);
 });
 
