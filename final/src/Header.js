@@ -1,5 +1,4 @@
 import React, {useState} from 'react'; 
-import lines from './images/lines.jpg';
 import './Header.css';
 
 function Header() {
