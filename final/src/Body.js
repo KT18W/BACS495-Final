@@ -1,14 +1,13 @@
-import React from 'react'
-import treasure from './images/treasure.jpg';
-import './Body.css';
+import React, {useState} from 'react';
 
 function Body() {
-    return (
-      <div className="Body">
-            <img className="Pic" src={treasure} alt="Treasure Chest" />
-          
-      </div>
-    )
-  }
-  
-  export default Body
+  const[name, setName] = useState("No one");
+
+
+  return <div>
+      <input value={name} onInput={e=> setName(e.target.value)}/>
+    <p>Name is set to: {name}</p>
+  </div>;
+}
+
+export default Body;
