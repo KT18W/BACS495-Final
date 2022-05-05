@@ -17,11 +17,12 @@ function UserInput(props) {
       .then(data => console.log(data))
     props.notifyParent();
   }
+
   return <div>
       <p>
         Register Here!<br/>
-        <input type="text" id="id" onChange={e=>setId(e.target.value)}/><br/>
-        <input type="text" id="name" onChange={e=>setName(e.target.value)}/><br/>
+        <input type="text" placeholder="Id number" id="id" onChange={e=>setId(e.target.value)}/><br/>
+        <input type="text" placeholder="Name" id="name" onChange={e=>setName(e.target.value)}/><br/>
         <button value="Insert New User" onClick={createUser}>Register</button>
       </p>
   </div>;

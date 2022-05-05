@@ -10,11 +10,11 @@ router.get('/', function(req, res, next) {
   cursor.toArray().then(c => res.json(c));
 });
 
-router.get('/:id', function(req, res, next) {
+router.get('/:name', function(req, res, next) {
   var db = req.app.locals.db;
-  var id = req.params.id;
+  var name = req.params.name;
   console.log(id);
-  const query = {'id': id};
+  const query = {'name': name};
   db.collection("users")
     .findOne(query)
     .then(result => {
@@ -38,12 +38,13 @@ router.post("/", function(req, res, next){
   res.json({"message":"User inserted"});
 });
 
+router.put('/users/:userId', (req, res) => {
+  const user = getUser(req.params.userId)
+ 
+  if (!user) return res.status(404).json({})
+ 
+  user.name = req.body.name
+  res.json(user)
+ })
+
 module.exports = router;
-// router.put('/users/:userId', (req, res) => {
-//   const user = getUser(req.params.userId)
- 
-//   if (!user) return res.status(404).json({})
- 
-//   user.name = req.body.name
-//   res.json(user)
-//  })
