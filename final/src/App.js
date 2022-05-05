@@ -3,7 +3,7 @@ import './css/App.css';
 import Header from './Header';
 import Footer from './Footer';
 import './css/Blocks.css';
-import Users from './Users';
+import Questions from './Questions';
 import RegisterBox from './RegisterBox';
 import LoginBox from './LoginBox';
 
@@ -18,7 +18,7 @@ function App(){
           <RegisterBox />
         </div>
         <div className='midBox'>
-          <Users />
+          <Questions />
         </div>
       </div>
       <Footer />

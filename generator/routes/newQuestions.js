@@ -51,24 +51,4 @@ router.put('/questions/:question', (req, res) => {
   res.json(question)
  })
 
-const questionSchema = new Schema({
-    question: {
-        type: String,
-        required: true,
-        minLength: 1
-        //could validate stuff here
-    },
-    answers: {
-        type: [String],
-        requried: false,
-        minLength: 1
-    },
-    votes: {
-        type: Number,
-        required: false,
-        min: 0
-    }
-});
-
-const Questions = mongoose.model('questions', questionSchema);
-module.exports = Questions;
+ module.exports = router;

@@ -2,8 +2,8 @@ So I have the project set up just like in class, and I called the database users
 
 I was running into cors errors so I installed cors.
 
-I also have mongoose installed in the backend because I wanted to learn it. I also used plain express, so don't worry.
+Note: you have to hit the login button inside of the login popup one extra time at the beginning then you can test all you want.
+
+I also have mongoose installed in the backend because I wanted to learn it. It doesn't actually effect anything at the moment because I was trying to do things without it.
 
 If you don't have it and need it is just 'npm i mongoose'
-
-Note: you have to hit the login button inside of the login popup one extra time at the beginning then you can test all you want.
