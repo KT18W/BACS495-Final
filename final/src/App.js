@@ -2,16 +2,25 @@ import React, { useState } from 'react';
 import './css/App.css';
 import Header from './Header';
 import Footer from './Footer';
-import Body from './Body';
-import Blocks from './Blocks';
+import './css/Blocks.css';
 import Users from './Users';
+import RegisterBox from './RegisterBox';
+import LoginBox from './LoginBox';
+
+
 function App(){
   return (
     <div className="App">
       <Header />
-      <Users />
-      <Body />
-      <Blocks />
+      <div className='container'>
+        <div className='topLeftBox'> 
+          <LoginBox />
+          <RegisterBox />
+        </div>
+        <div className='midBox'>
+          <Users />
+        </div>
+      </div>
       <Footer />
     </div>
   );

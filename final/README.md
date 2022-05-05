@@ -1,1 +1,1 @@
-So I have the project set up just like in class, and I called the database usersdb, so you just have to change all of the instances of that to your database name it should work
+So I have the project set up just like in class, and I called the database usersdb, so you just have to change all of the instances of that to your database name it should work.

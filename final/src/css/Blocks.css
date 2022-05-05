@@ -1,11 +1,25 @@
 .container{
     display: flex;
-    flex-wrap: wrap;
 }
 
 .box{
-    min-width: 200px;
-    height: 200px;
-    background-color: red;
-    margin: 3em;
+    width: 200px;
+    height: 80%;
+    background-color: rgb(212, 176, 246);
+    margin: .5em;
+    text-align: center;
+}
+
+.leftBox{
+    min-width: 19vw;
+    min-height: 80vh;
+    background-color: rgb(212, 176, 246);
+    text-align: left;
+}
+
+.midBox{
+    min-width: 79vw;
+    min-height: 80vh;
+    background-color: rgb(212, 176, 246);
+    text-align: center;
 }

@@ -22,7 +22,7 @@ router.get('/:id', function(req, res, next) {
       res.json(result);
     })
     .catch(err=>{
-      console.log(`Error: ${err}`);
+      console.log(`User not in database`);
     });
   
 });

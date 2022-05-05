@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-function UserInput(props) {
+function LogIn(props) {
   const [name, setName] = useState(0);
   const [id, setId] = useState(0);
   const createUser = (e) =>{
@@ -19,12 +19,12 @@ function UserInput(props) {
   }
   return <div>
       <p>
-        Register Here!<br/>
+        Login Here!<br/>
         <input type="text" id="id" onChange={e=>setId(e.target.value)}/><br/>
         <input type="text" id="name" onChange={e=>setName(e.target.value)}/><br/>
-        <button value="Insert New User" onClick={createUser}>Register</button>
+        <button value="Insert New User" onClick={createUser}>Login</button>
       </p>
   </div>;
 }
 
-export default UserInput;
+export default LogIn;
