@@ -5,6 +5,7 @@ import UserInput from './Users/UserInput';
 function Users() {
   const [users, setUsers] = useState([]);
   const [update, setUpdate] = useState(0);
+  const [login, setLogin] = useState(false)
 
   useEffect(() => {
     fetch(process.env.REACT_APP_API_URL)  
@@ -18,7 +19,13 @@ function Users() {
     setUpdate(newVal);
   }
 
+
   return <div>
+      {users.includes('Katie') &&
+      (<div>
+        hello
+        </div>)}
+        {users.includes('1')}
       <UserDisplay users={users}/>
       <UserInput notifyParent = {rerender}/>
   </div>;

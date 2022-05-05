@@ -6,7 +6,8 @@ import './css/Blocks.css';
 function RegisterBox() {
   const [users, setUsers] = useState([]);
   const [update, setUpdate] = useState(0);
-  const [regModal, showRegModal] = useState(false)
+  const [regModal, showRegModal] = useState(false);
+  const [regButton, showRegButton] = useState(true);
 
   useEffect(() => {
     fetch(process.env.REACT_APP_API_URL)  
@@ -22,14 +23,15 @@ function RegisterBox() {
 
   const toggleRegModal = () => {
     showRegModal(!regModal)
+    showRegButton(!regButton)
   }
 
   return( <div>
-      <button 
-        onClick={toggleRegModal}
-        className="regModalButton">
+    {regButton && (
+      <button onClick={toggleRegModal}>
           Register
       </button>
+    )}
       {regModal && (
         <div className='container'>
           <div className='box'>

@@ -22,7 +22,7 @@ router.get('/:id', function(req, res, next) {
       res.json(result);
     })
     .catch(err=>{
-      console.log(`User not in database`);
+      console.log(`Error: ${err}`);
     });
   
 });
@@ -39,3 +39,11 @@ router.post("/", function(req, res, next){
 });
 
 module.exports = router;
+// router.put('/users/:userId', (req, res) => {
+//   const user = getUser(req.params.userId)
+ 
+//   if (!user) return res.status(404).json({})
+ 
+//   user.name = req.body.name
+//   res.json(user)
+//  })

@@ -3,9 +3,9 @@
 }
 
 .box{
-    width: 200px;
-    height: 80%;
-    background-color: rgb(212, 176, 246);
+    width: 180px;
+    height: 160px;
+    background-color: rgba(104, 18, 190, 0.753);
     margin: .5em;
     text-align: center;
 }

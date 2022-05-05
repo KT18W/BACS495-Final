@@ -6,7 +6,8 @@ import './css/Blocks.css';
 function LoginBox() {
   const [users, setUsers] = useState([]);
   const [update, setUpdate] = useState(0);
-  const [logModal, showLogModal] = useState(false)
+  const [logModal, showLogModal] = useState(false);
+  const [logButton, showLogButton] = useState(true);
 
   useEffect(() => {
     fetch(process.env.REACT_APP_API_URL)  
@@ -22,14 +23,15 @@ function LoginBox() {
 
   const toggleLogModal = () => {
     showLogModal(!logModal)
+    showLogButton(!logButton)
   }
 
   return( <div>
-      <button 
-        onClick={toggleLogModal}
-        className="logModalButton">
+    {logButton && (
+      <button onClick={toggleLogModal}>
           Login
       </button>
+    )}
       {logModal && (
         <div className='container'>
           <div className='box'>
