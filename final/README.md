@@ -1,5 +1,8 @@
 I don't know if it matters, but I have 2 different collections in my database, one for users and one for questions and answers.
 
+The port for the client is 3000
+The port for the server is 9000
+
 So I have the project set up just like in class, and I called the database usersdb, so you just have to change all of the instances of that to your database name it should work. There is also a connection inside the app.js file where it says 'const dbURI' with the database string, you will have to change that as well.
 
 I was running into cors errors so I installed cors.
