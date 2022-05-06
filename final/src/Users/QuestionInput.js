@@ -4,7 +4,7 @@ function QuestionInput(props) {
   const [question, setQuestion] = useState(0);
   const [answers, setAnswers] = useState(0);
   const createQuestion = (e) =>{
-    var insert = {'id': question, 'name': "No Answers Yet"}
+    var insert = {id:question, name: "No Answers Yet", votes:0}
     fetch('http://localhost:9000/newQuestions', 
         {
             method:'POST', 

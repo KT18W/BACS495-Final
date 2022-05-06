@@ -30,12 +30,24 @@ router.get('/:name', function(req, res, next) {
 router.post("/", function(req, res, next){
   const user = {
     "id": req.body.id,
-    "name": req.body.name
+    "name": req.body.name,
+    "votes": req.body.votes
   }
   console.log(user);
   var db = req.app.locals.db; 
   db.collection("questions").insertOne(user); 
   res.json({"message":"question inserted"});
 });
+
+router.patch("/", function(req, res, next){
+    const question = {
+      "id": req.body.id
+    }
+    var db = req.app.locals.db; 
+    db.collection("questions").updateOne(question
+    , {$set: {"votes": req.body.votes}}
+    , {upsert: true}); 
+    res.json({"message": " - " + req.body.votes + " votes registered for: " + req.body.id});
+  });
 
 module.exports = router;

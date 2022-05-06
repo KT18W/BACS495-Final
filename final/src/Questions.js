@@ -6,8 +6,6 @@ function Users() {
   const [update, setUpdate] = useState(0);
   const [question, setQuestion] = useState(0);
   const [answers, setAnswers] = useState(0);
-  const [answerBox, showAnswerBox] = useState(false);
-  const [answerButton, showAnswerButton] = useState(true);
 
   useEffect(() => {
     fetch('http://localhost:9000/newQuestions')  
@@ -22,15 +20,23 @@ function Users() {
   }
 
   const submitAnswer = () => {
-
+    
+    console.log(answers)
   }
 
   const upvote = () => {
-
-  }
-
-  const downvote = () => {
-
+    //var insert = {'id': question}
+    // fetch('http://localhost:9000/newQuestions', 
+    //     {
+    //         method:'PATCH', 
+    //         body: JSON.stringify(insert),
+    //         headers: {
+    //           "Content-Type": "application/json; charset=utf-8",
+    //         }
+    //     })  
+    //   .then(res => res.json())
+    //   .then(data => console.log(data))
+    console.log("upvote")
   }
 
   return <div>
@@ -43,13 +49,10 @@ function Users() {
               <button onClick={upvote}>
                     upvote
                 </button>
-                <button onClick={downvote}>
-                    downvote
-                </button>
               <br></br>
             Answer:
               {u.name}<br></br>
-                <input type="text" placeholder="Answer" id="Question" onChange={e=>setAnswers(e.target.value)}/>
+                <input type="text" placeholder="Answer" id="answer" onChange={e=>setAnswers(e.target.value)}/>
                 <button onClick={submitAnswer}>
                     answer
                 </button>
