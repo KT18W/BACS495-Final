@@ -1,14 +1,16 @@
 import React, {useState, useEffect} from 'react';
-import QuestionDisplay from './Users/QuestionDisplay';
-import QuestionInput from './Users/QuestionInput';
+import UserInput from './Users/QuestionInput';
 
 function Users() {
   const [users, setUsers] = useState([]);
   const [update, setUpdate] = useState(0);
-  const [login, setLogin] = useState(false)
+  const [question, setQuestion] = useState(0);
+  const [answers, setAnswers] = useState(0);
+  const [answerBox, showAnswerBox] = useState(false);
+  const [answerButton, showAnswerButton] = useState(true);
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_API_URL_NEWQUESTIONS)  
+    fetch('http://localhost:9000/newQuestions')  
       .then(res => res.json())
       .then(data => setUsers(data))
   }, [update])
@@ -19,10 +21,40 @@ function Users() {
     setUpdate(newVal);
   }
 
+  const submitAnswer = () => {
+
+  }
+
+  const upvote = () => {
+
+  }
+
+  const downvote = () => {
+
+  }
 
   return <div>
-      <QuestionInput notifyParent = {rerender}/>
-      <QuestionDisplay users={users}/>
+      <UserInput notifyParent = {rerender}/>
+       <div>
+          Previously asked questions
+          {users.map(u => <ul key={u.id}>
+            Question:
+              {u.id} <br></br>
+              <button onClick={upvote}>
+                    upvote
+                </button>
+                <button onClick={downvote}>
+                    downvote
+                </button>
+              <br></br>
+            Answer:
+              {u.name}<br></br>
+                <input type="text" placeholder="Answer" id="Question" onChange={e=>setAnswers(e.target.value)}/>
+                <button onClick={submitAnswer}>
+                    answer
+                </button>
+          </ul>)}
+    </div>
   </div>;
 }
 

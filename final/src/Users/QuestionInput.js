@@ -4,8 +4,8 @@ function QuestionInput(props) {
   const [question, setQuestion] = useState(0);
   const [answers, setAnswers] = useState(0);
   const createQuestion = (e) =>{
-    var insert = {'question': question, 'answers': answers}
-    fetch(process.env.REACT_APP_API_URL_NEWQUESTIONS, 
+    var insert = {'id': question, 'name': "No Answers Yet"}
+    fetch('http://localhost:9000/newQuestions', 
         {
             method:'POST', 
             body: JSON.stringify(insert),

@@ -1,8 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const { route } = require('.');
-
 var express = require('express');
+const { route } = require('.');
 var router = express.Router();
 
 
@@ -13,15 +10,15 @@ router.get('/', function(req, res, next) {
   cursor.toArray().then(c => res.json(c));
 });
 
-router.get('/:question', function(req, res, next) {
+router.get('/:name', function(req, res, next) {
   var db = req.app.locals.db;
-  var question = req.params.name;
-  console.log(question);
-  const query = {'question': question};
+  var name = req.params.name;
+  console.log(id);
+  const query = {'name': name};
   db.collection("questions")
     .findOne(query)
     .then(result => {
-      console.log(`Got question ${result}`);
+      console.log(`Got user ${result}`);
       res.json(result);
     })
     .catch(err=>{
@@ -31,24 +28,14 @@ router.get('/:question', function(req, res, next) {
 });
 
 router.post("/", function(req, res, next){
-  const question = {
-    "question": req.body.question,
-    "answers": req.body.answers,
-    "votes": req.body.quotes
+  const user = {
+    "id": req.body.id,
+    "name": req.body.name
   }
-  console.log(question);
+  console.log(user);
   var db = req.app.locals.db; 
-  db.collection("questions").insertOne(question); 
-  res.json({"message":"Question inserted"});
+  db.collection("questions").insertOne(user); 
+  res.json({"message":"question inserted"});
 });
 
-router.put('/questions/:question', (req, res) => {
-  const question = getQuestion(req.params.question)
- 
-  if (!question) return res.status(404).json({})
- 
-  question.question = req.body.question
-  res.json(question)
- })
-
- module.exports = router;
+module.exports = router;
